@@ -35,7 +35,7 @@ const createProduct = async (request, reply) => {
     }
 }
 
-const updateProduct = async (_request, reply) => {
+const updateProduct = async (request, reply) => {
     try {
         const {id} = request.params
         const {body} = request
@@ -46,7 +46,7 @@ const updateProduct = async (_request, reply) => {
     }
 }
 
-const deleteProduct = async (_request, reply) => {
+const deleteProduct = async (request, reply) => {
     try {
         const {id} = request.params
         await Product.findByIdAndDelete(id)
