@@ -8,8 +8,6 @@ const fastifySwagger = require('@fastify/swagger');
 const fastifySwaggerUi = require('@fastify/swagger-ui');
 
 const host = process.env.HOST || 'localhost';
-const port = process.env.PORT || 3000;
-const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
 
 fastify.register(fastifySwagger, {
     openapi: {
@@ -21,7 +19,7 @@ fastify.register(fastifySwagger, {
       },
       servers: [
         {
-          url: `${protocol}://${host}`,
+          url: `${host}`,
           description: 'Development server'
         }
       ],
