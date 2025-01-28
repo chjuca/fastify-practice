@@ -1,3 +1,4 @@
+require('dotenv').config();
 const productsRoutes = require('./routes/products.routes')
 const fastify = require('fastify')({
     logger: true
@@ -5,6 +6,10 @@ const fastify = require('fastify')({
 
 const fastifySwagger = require('@fastify/swagger');
 const fastifySwaggerUi = require('@fastify/swagger-ui');
+
+const host = process.env.HOST || 'localhost';
+const port = process.env.PORT || 3000;
+const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
 
 fastify.register(fastifySwagger, {
     openapi: {
@@ -16,7 +21,7 @@ fastify.register(fastifySwagger, {
       },
       servers: [
         {
-          url: 'http://localhost:3000',
+          url: `${protocol}://${host}:${port}`,
           description: 'Development server'
         }
       ],
