@@ -21,7 +21,7 @@ fastify.register(fastifySwagger, {
       },
       servers: [
         {
-          url: `${protocol}://${host}:${port}`,
+          url: `${protocol}://${host}`,
           description: 'Development server'
         }
       ],
