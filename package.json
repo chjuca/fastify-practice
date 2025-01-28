@@ -15,7 +15,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "build": "echo 'ready for deployment'"
   },
   "author": "",
   "license": "ISC",
